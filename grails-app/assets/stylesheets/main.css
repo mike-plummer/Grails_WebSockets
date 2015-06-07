@@ -1,0 +1,88 @@
+
+body, input {
+    font-family: sans-serif;
+}
+
+html {
+    background-color: #DDD;
+    background-image: -moz-linear-gradient(center top, #AAA, #DDD);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #AAA), color-stop(1, #DDD));
+    background-image: linear-gradient(top, #AAA, #DDD);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#AAAAAA', EndColorStr = '#DDDDDD');
+    background-repeat: no-repeat;
+    height: 100%;
+    /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html.no-cssgradients {
+    background-color: #AAA;
+}
+
+body {
+    background: #FFFFFF;
+    color: #333333;
+    margin: 0 auto;
+    max-width: 960px;
+    overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+       -moz-box-shadow: 0 0 0.3em #255B17;
+    -webkit-box-shadow: 0 0 0.3em #255B17;
+            box-shadow: 0 0 0.3em #255B17;
+}
+
+header {
+    background: #0052A3;
+    padding-left: 5px;
+}
+
+footer {
+    background: #0052A3;
+    color: #000;
+    clear: both;
+    font-size: 0.8em;
+    margin-top: 1.5em;
+    padding: 1em;
+    min-height: 1em;
+}
+
+section {
+    padding-left: 10px;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+input {
+    background-color: #FCFCFC;
+    border: 1px solid #CCCCCC;
+    font-size: 1em;
+    padding: 0.2em 0.4em;
+}
+
+input:focus {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    outline: 0;
+       -moz-box-shadow: 0 0 0.5em #FFFFFF;
+    -webkit-box-shadow: 0 0 0.5em #FFFFFF;
+            box-shadow: 0 0 0.5em #FFFFFF;
+}
+
+.sectionDivider {
+    margin: 10px 0px;
+}
+
+#symbol {
+    color: blue;
+}
+
+#quoteDiv {
+    padding: 10px 20px;
+}
+
+#chatDiv {
+    padding: 10px 20px;
+}
