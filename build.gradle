@@ -17,7 +17,7 @@ plugins {
 }
 
 version "0.1"
-group "websockets"
+group "com.objectpartners.plummer"
 
 apply plugin: "spring-boot"
 apply plugin: "war"
@@ -56,6 +56,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile "org.springframework.boot:spring-boot-starter-security"
     compile "org.grails:grails-dependencies"
     compile "org.grails:grails-web-boot"
 

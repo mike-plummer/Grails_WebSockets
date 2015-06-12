@@ -8,5 +8,6 @@ class UrlMappings {
         }
 
         "/"(view:"/index")
+        "/secure"(view:"/secure")
     }
 }
