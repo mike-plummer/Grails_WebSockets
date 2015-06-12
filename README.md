@@ -13,6 +13,9 @@ The main page supplies options to subscribe to stock quotes (reminder - these ar
 
 To exit, Ctrl-C in your command prompt (assuming you're in UNIX). It may take several seconds for grails to shut down.
 
+###Private Messages
+By accessing http://localhost:8080/secure you can try out user-directed messages. This stack has the ability to send messages to a specific user and this page demonstrates that. Spring Security has been enabled for this page so you will be prompted to login - use either user/password or user2/password. In the background a private message is sent to "user" every 10 seconds. By logging in as user you should receive these messages; if you open a separate browser and login as user2 you will not see them.
+
 ##Tools & Frameworks
 ### grails-spring-websocket
 Brings Spring 4.0 WebSockets features into Grails. This plugin was recently updated to be compatible with Grails 3.0 which made it ideal. This exact same functionality is available in standalone Spring-Boot so the majority of the code in this repo can be ported over to a Spring-Boot app with minimal structural changes.
