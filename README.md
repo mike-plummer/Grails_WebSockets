@@ -4,6 +4,8 @@ Example of WebSockets usage in Grails using the grails-spring-websocket plugin, 
 ##Description
 The basic premise of the application is a Stock Ticker and Chat Room (not very original, I know). Upon opening the webpage the browser attempts to establish a series of connections via WebSocket back to the server to listen for subscribed data. On startup the server component launches a Quartz job (background scheduling) to generate random (and complete gibberish) stock quotes. Each web client can subscribe or unsubscribe from these updates at-will. If any user sends a chat message it is routed via the server to any other open web clients to act as a chat room.
 
+For more info take a look at the log post this example was written for: https://objectpartners.com/2015/06/10/websockets-in-grails-3-0/
+
 ##Usage
 After cloning the repo, ensure you have Grails 3.0+ installed by running `grails -version` - if not, get it from [Grails](https://grails.org/) or using [GVM](http://gvmtool.net/). 
 
