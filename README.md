@@ -6,8 +6,14 @@ The basic premise of the application is a Stock Ticker and Chat Room (not very o
 
 For more info take a look at the blog post this example was written for: https://objectpartners.com/2015/06/10/websockets-in-grails-3-0/
 
+## Important Grails Note
+Recent changes to Grails have broken compatibility with older versions of Gradle. Grails newer than 3.0.3 likely will not work with Gradle 2.3. If you've upgraded Grails recently and can't execute any Grails commands try the following:
+1. Kill the Gradle daemon `gradle --stop` - double check all Gradle processes are stopped with `ps -ef | grep gradle`. Kill any lingering Gradle processes (after ensuring they're safe to kill!)
+2. Remove your local Gradle cache `rm -rf ~/.gradle` (Note: I had to do this but it might not be necessary for you.)
+3. Upgrade Gradle to 2.7+ and you should be good to go.
+
 ##Usage
-After cloning the repo, ensure you have Grails 3.0+ installed by running `grails -version` - if not, get it from [Grails](https://grails.org/) or using [GVM](http://gvmtool.net/). 
+After cloning the repo, ensure you have Grails 3.0+ installed by running `grails -version` - if not, get it from [Grails](https://grails.org/) or using [SDKMAN](http://sdkman.io/). 
 
 From a command prompt, enter the Grails_WebSockets directory you cloned and execute `grails run-app`. After a short wait you should see the following: `Grails application running at http://localhost:8080`. At this point, open a browser tab (or two) and navigate to http://localhost:8080.
 
