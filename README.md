@@ -8,6 +8,7 @@ For more info take a look at the blog post this example was written for: https:/
 
 ## Important Grails Note
 Recent changes to Grails have broken compatibility with older versions of Gradle. Grails newer than 3.0.3 likely will not work with Gradle 2.3. If you've upgraded Grails recently and can't execute any Grails commands try the following:
+
 1. Kill the Gradle daemon `gradle --stop` - double check all Gradle processes are stopped with `ps -ef | grep gradle`. Kill any lingering Gradle processes (after ensuring they're safe to kill!)
 2. Remove your local Gradle cache `rm -rf ~/.gradle` (Note: I had to do this but it might not be necessary for you.)
 3. Upgrade Gradle to 2.7+ and you should be good to go.
