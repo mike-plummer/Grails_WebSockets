@@ -25,7 +25,8 @@
                     //Subscribe to the 'chat' topic and define a function that is executed
                     //anytime a message is published to that topic by the server or another client.
                     client.subscribe("/topic/chat", function(message) {
-                        var chatMsg = JSON.parse(message.body)
+                      console.log(message)
+                        var chatMsg = JSON.parse(JSON.parse(message.body))
                         var time = '<strong>' + new Date(chatMsg.timestamp).toLocaleTimeString() + '</strong>'
                         $("#chatDiv").append(time + ': ' + chatMsg.message + "<br/>");
                     });
@@ -37,7 +38,7 @@
                     $("#startButton").prop('disabled', true);
                     //Initiate a subscription to stockQuote messages.
                     quoteSubscription = client.subscribe("/topic/stockQuote", function(message) {
-                        var quote = JSON.parse(message.body);
+                        var quote = JSON.parse(message.body).content;
                         $("#symbol").text(quote.symbol);
                         $("#price").text(quote.price.toFixed(2));
                         $("#timestamp").text(new Date(quote.timestamp).toLocaleString());
@@ -63,7 +64,7 @@
 
                 //When the user sends a chat message publish it to the chat topic
                 $("#sendButton").click(function() {
-                    client.send("/app/chat", {}, $("#chatMessage").val());
+                    client.send("/app/chat", {}, JSON.stringify($("#chatMessage").val()));
                 });
             });
         </script>

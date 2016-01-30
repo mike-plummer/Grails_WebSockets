@@ -55,6 +55,6 @@ class StockQuoteJob {
         }
 
         //Publish the new quote
-        brokerMessagingTemplate.convertAndSend "/topic/stockQuote", builder.toString()
+        brokerMessagingTemplate.convertAndSend "/topic/stockQuote", builder
     }
 }

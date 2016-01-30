@@ -34,10 +34,10 @@ class PrivateChatMessageJob {
             message("Hello, user!")
             timestamp(new Date())
         }
-        builder.toString()
+        
         //Note the lack of the leading /user compared to what the webpage subscribes to
         // - this is added automatically
-        brokerMessagingTemplate.convertAndSendToUser "user", "/topic/chat", builder.toString()
+        brokerMessagingTemplate.convertAndSendToUser "user", "/topic/chat", builder
 
         println "Sent private message"
     }

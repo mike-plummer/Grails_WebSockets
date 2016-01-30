@@ -20,7 +20,7 @@ class ChatController {
         def builder = new JsonBuilder()
         builder {
             message(chatMsg)
-            timestamp(new Date())
+            timestamp(new Date().getTime())
         }
         builder.toString()
     }
