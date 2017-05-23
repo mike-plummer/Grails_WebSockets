@@ -13,7 +13,7 @@ Recent changes to Grails have broken compatibility with older versions of Gradle
 2. Remove your local Gradle cache `rm -rf ~/.gradle` (Note: I had to do this but it might not be necessary for you.)
 3. Upgrade Gradle to 2.9+ and you should be good to go.
 
-##Usage
+## Usage
 After cloning the repo, ensure you have Grails 3.1+ installed by running `grails -version` - if not, get it from [Grails](https://grails.org/) or using [SDKMAN](http://sdkman.io/). 
 
 From a command prompt, enter the Grails_WebSockets directory you cloned and execute `grails run-app`. After a short wait you should see the following: `Grails application running at http://localhost:8080`. At this point, open a browser tab (or two) and navigate to http://localhost:8080.
@@ -22,23 +22,23 @@ The main page supplies options to subscribe to stock quotes (reminder - these ar
 
 To exit, Ctrl-C in your command prompt (assuming you're in UNIX). It may take several seconds for grails to shut down.
 
-###Private Messages
+### Private Messages
 By accessing http://localhost:8080/secure you can try out user-directed messages. This stack has the ability to send messages to a specific user and this page demonstrates that. Spring Security has been enabled for this page so you will be prompted to login - use either user/password or user2/password. In the background a private message is sent to "user" every 10 seconds. By logging in as user you should receive these messages; if you open a separate browser and login as user2 you will not see them.
 
-##Tools & Frameworks
+## Tools & Frameworks
 ### grails-spring-websocket
 Brings Spring 4 WebSockets features into Grails. This plugin was recently updated to be compatible with Grails 3 which made it ideal. This exact same functionality is available in standalone Spring-Boot so the majority of the code in this repo can be ported over to a Spring-Boot app with minimal structural changes.
 
 ### Grails 3.0
 Just a few months ago Grails got a huge facelift when it jumped from 2.5 to 3. Lots of structural changes and consolidations as Grails became gradle and spring-boot based. This repo doesn't have much code that explores new features in Grails - it's just a simple Grails 3.1.0 app to help me familarize myself with the new setup.
 
-###Stomp
+### Stomp
 From the [Stomp docs](http://jmesnil.net/stomp-websocket/doc/):
 >STOMP is a simple text-orientated messaging protocol. It defines an interoperable wire format so that any of the available STOMP clients can communicate with any STOMP message broker to provide easy and widespread messaging interoperability among languages and platforms
 
-###SockJS
+### SockJS
 From the [SockJS docs](https://github.com/sockjs/sockjs-client):
 >SockJS is a browser JavaScript library that provides a WebSocket-like object. SockJS gives you a coherent, cross-browser, Javascript API which creates a low latency, full duplex, cross-domain communication channel between the browser and the web server.
 
-##Licensing
+## Licensing
 This code is provided under the terms of the MIT license: basically you're free to do whatever you want with it, but no guarantees are made to its validity, stability, or safety. All works referenced by or utilized by this project are the property of their respective copyright holders and retain licensing that may be more restrictive.
