@@ -1,30 +1,21 @@
 buildscript {
-    ext {
-        grailsVersion = project.grailsVersion
-    }
     repositories {
         mavenLocal()
-        maven { url "https://repo.grails.org/grails/core" }
+        maven { url 'https://repo.grails.org/grails/core' }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.5.0"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:$assetPipelineGradleVersion"
     }
 }
 
-version "0.1"
-group "com.objectpartners.plummer"
+version '0.2'
+group 'com.objectpartners.plummer'
 
-apply plugin:"eclipse"
-apply plugin:"idea"
-apply plugin:"war"
-apply plugin:"org.grails.grails-web"
-apply plugin:"org.grails.grails-gsp"
-apply plugin:"asset-pipeline"
-
-ext {
-    grailsVersion = project.grailsVersion
-}
+apply plugin:'war'
+apply plugin:'org.grails.grails-web'
+apply plugin:'org.grails.grails-gsp'
+apply plugin:'asset-pipeline'
 
 assets {
     minifyJs = true
@@ -33,7 +24,7 @@ assets {
 
 repositories {
     mavenLocal()
-    maven { url "https://repo.grails.org/grails/core" }
+    maven { url 'https://repo.grails.org/grails/core' }
 }
 
 dependencyManagement {
@@ -44,24 +35,22 @@ dependencyManagement {
 }
 
 dependencies {
-    compile "org.grails.plugins:quartz:2.0.0.BUILD-SNAPSHOT"
-    compile "org.grails.plugins:grails-spring-websocket:2.3.0"
+    compile "org.grails.plugins:quartz:$quartzVersion"
+    compile "org.grails.plugins:grails-spring-websocket:$grailsSpringWebsocketVersion"
 
-    compile "org.springframework.boot:spring-boot-starter-logging"
-    compile "org.springframework.boot:spring-boot-autoconfigure"
-    compile "org.grails:grails-core"
-    compile "org.springframework.boot:spring-boot-starter-actuator"
-    compile "org.springframework.boot:spring-boot-starter-tomcat"
-    compile "org.springframework.boot:spring-boot-starter-security"
-    compile "org.grails:grails-dependencies"
-    compile "org.grails:grails-web-boot"
-    compile "org.grails.plugins:cache"
-    compile "org.grails.plugins:scaffolding"
-    console "org.grails:grails-console"
-    profile "org.grails.profiles:web:3.1.0"
-    runtime "org.grails.plugins:asset-pipeline"
-    testCompile "org.grails:grails-plugin-testing"
-    testCompile "org.grails.plugins:geb"
-    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
-    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    compile 'org.springframework.boot:spring-boot-starter-logging'
+    compile 'org.springframework.boot:spring-boot-autoconfigure'
+    compile 'org.grails:grails-core'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-tomcat'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.grails:grails-dependencies'
+    compile 'org.grails:grails-web-boot'
+    compile 'org.grails.plugins:cache'
+    compile 'org.grails.plugins:scaffolding'
+    console 'org.grails:grails-console'
+    profile 'org.grails.profiles:web'
+    runtime "org.grails.plugins:asset-pipeline:$assetPipelineVersion"
+    testCompile 'org.grails:grails-plugin-testing'
+    testCompile 'org.grails.plugins:geb'
 }
