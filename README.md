@@ -11,13 +11,14 @@ For more info take a look at the blog post this example was written for: https:/
 1. Clone this repo
 2. From project root, execute `./gradlew bootRun`
 3. Navigate to `http://localhost:8080`.
+4. Login either as 'user/password', or 'user2/password'
 
 The main page supplies options to subscribe to stock quotes (reminder - these are fake! I'm not responsible if you decide to believe them). Any number of browser tabs you open and subscribe will get the same data broadcast to them at the same time. There is also a chat option - any open browser tab will display the chat messages from any other client.
 
 To exit, Ctrl-C in your command prompt (assuming you're in UNIX). It may take several seconds for grails to shut down.
 
 ### Private Messages
-By accessing http://localhost:8080/secure you can try out user-directed messages. This stack has the ability to send messages to a specific user and this page demonstrates that. Spring Security has been enabled for this page so you will be prompted to login - use either user/password or user2/password. In the background a private message is sent to "user" every 10 seconds. By logging in as user you should receive these messages; if you open a separate browser and login as user2 you will not see them.
+If you are logged in as `user` then you will see private messages sent to you by the server - `user2` will not see these. This is an example of secured WebSockets which is managed using SpringSecurity integration.
 
 ## Tools & Frameworks
 ### grails-spring-websocket
