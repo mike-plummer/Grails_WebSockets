@@ -1,17 +1,17 @@
 # Grails_WebSockets
 Example of WebSockets usage in Grails using the grails-spring-websocket plugin, SockJS, and StompJS. This was done as a hobby project to get more familiar with WebSockets and the changes in Grails v3.
 
-##Description
+## Description
 The basic premise of the application is a Stock Ticker and Chat Room (not very original, I know). Upon opening the webpage the browser attempts to establish a series of connections via WebSocket back to the server to listen for subscribed data. On startup the server component launches a Quartz job (background scheduling) to generate random (and complete gibberish) stock quotes. Each web client can subscribe or unsubscribe from these updates at-will. If any user sends a chat message it is routed via the server to any other open web clients to act as a chat room.
 
 For more info take a look at the blog post this example was written for: https://objectpartners.com/2015/06/10/websockets-in-grails-3-0/
 
-##Usage
+## Usage
 
 1. Clone this repo
 2. From project root, execute `./gradlew bootRun`
 3. Navigate to `http://localhost:8080`.
-4. Login either as 'user/password', or 'user2/password'
+4. Login either as `user/password`, or `user2/password`
 
 The main page supplies options to subscribe to stock quotes (reminder - these are fake! I'm not responsible if you decide to believe them). Any number of browser tabs you open and subscribe will get the same data broadcast to them at the same time. There is also a chat option - any open browser tab will display the chat messages from any other client.
 
