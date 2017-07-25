@@ -1,5 +1,7 @@
 package com.objectpartners.plummer
 
+import org.apache.commons.lang.RandomStringUtils
+import org.apache.commons.lang.math.RandomUtils
 import org.springframework.messaging.simp.SimpMessagingTemplate
 import groovy.json.JsonBuilder
 
@@ -34,23 +36,14 @@ class StockQuoteJob {
      * What actually gets executed as the job.
     **/
     def execute() {
-        Random random = new Random();
-        /**
-         * Generate a random 4 character uppercase String using ASCII values.
-        **/
-        def generatedSymbol = '';
-        (0..3).collect {
-            generatedSymbol += (char) random.nextInt(26) + 65
-        };
-
         /**
          * Use the awesome Groovy JsonBuilder to convert a dynamically-defined
          * data structure to JSON.
         **/
         def builder = new JsonBuilder()
         builder {
-            symbol(generatedSymbol)
-            price(random.nextDouble() * 100)
+            symbol(RandomStringUtils.randomAlphabetic(3).toUpperCase())
+            price(RandomUtils.nextDouble() * 100)
             timestamp(new Date())
         }
 
